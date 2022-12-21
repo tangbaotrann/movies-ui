@@ -1,0 +1,35 @@
+.image-movie-week {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.btn-name-week {
+    display: flex;
+    text-align: left;
+    background-color: transparent;
+    color: var(--text);
+    margin-left: -6px;
+    font-weight: 600;
+
+    &:hover {
+        color: var(--text-hover);
+        opacity: 0.8;
+        transition: 0.4s linear;
+    }
+}
+
+.inner-movie-week {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.vote-movie-week {
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+}
+
+.overview-movie-week {
+    font-size: 1rem;
+}

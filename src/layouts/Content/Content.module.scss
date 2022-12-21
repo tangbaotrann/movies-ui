@@ -1,7 +1,37 @@
 .title-name {
-    margin-top: 10px;
+    margin-top: 16px;
+    margin-bottom: 10px;
 }
 
 .container-movie-film {
     display: flex;
+}
+
+.container-movie-week {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--text);
+    margin-top: 16px;
+}
+
+.title-name-week {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.inner-movie-week {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.btn-see-more-trending, .btn-see-more-all {
+    font-weight: 500;
+    margin-bottom: 6px;
+
+    &:hover {
+        background-color: var(--text-hover);
+        color: var(--text);
+        opacity: 0.8;
+        transition: 0.4s linear;
+    }
 }

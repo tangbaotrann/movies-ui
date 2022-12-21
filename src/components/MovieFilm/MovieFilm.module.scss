@@ -1,0 +1,20 @@
+.image-movie-film {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.btn-name-film {
+    background-color: transparent;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+        color: var(--text-hover);
+        opacity: 0.8;
+        transition: 0.4s linear;
+    }
+}

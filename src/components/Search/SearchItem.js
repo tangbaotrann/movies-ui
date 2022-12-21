@@ -8,7 +8,11 @@ const cx = classNames.bind(styles);
 function SearchItem({ result }) {
   return (
     <div className={cx("wrapper-search-item")}>
-      <Image src={result.backdrop_path} />
+      <Image
+        className={cx("image-movie-film")}
+        src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
+        alt="image-search"
+      />
 
       <div className={cx("desc-search-item")}>
         <h2 className={cx("title-search-item")}>{result.title}</h2>

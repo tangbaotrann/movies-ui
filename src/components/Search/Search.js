@@ -50,9 +50,9 @@ function Search() {
     <>
       <TippyHeadless
         render={(attrs) => (
-          <div tabIndex="-1" {...attrs}>
+          <div tabIndex="-1" {...attrs} className={cx("popper-search")}>
             <Popper>
-              <div>
+              <>
                 {resultSearch?.length > 0 ? (
                   resultSearch?.map((result) => {
                     return (
@@ -62,14 +62,16 @@ function Search() {
                     );
                   })
                 ) : (
-                  <span>Find not found name film!</span>
+                  <span className={cx("search-notification")}>
+                    Find not found name film!
+                  </span>
                 )}
-              </div>
+              </>
             </Popper>
           </div>
         )}
         placement="bottom-start"
-        offset={[10, -6]}
+        offset={[0, 4]}
         interactive
         visible={showResultSearch && value.length > 0}
         onClickOutside={handleClickOutSide}
