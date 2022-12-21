@@ -1,0 +1,27 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    // --color
+    --primary: #000000;
+    --text: #fff;
+
+    // --font-family
+    --font-family: 'Barlow', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary);
+    color: var(--text);
+}

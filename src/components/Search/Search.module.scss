@@ -1,0 +1,31 @@
+.wrapper-search {
+    display: flex;
+    padding: 10px;
+}
+
+.input-search {
+    margin-right: 4px;
+}
+
+.btn-search {
+    padding: 6px;
+}
+
+// Search item
+.wrapper-search-item {
+    display: flex;
+    align-items: center;
+}
+
+.desc-search-item {
+    margin-left: 10px;
+}
+
+.title-search-item {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.overview-search-item {
+    font-size: 1rem;
+}

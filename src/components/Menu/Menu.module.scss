@@ -1,0 +1,20 @@
+.menu-wrapper ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 10px;
+}
+
+.menu-wrapper ul li {
+    font-size: 1.6rem;
+    padding: 4px;
+    margin: 0 20px;
+
+    &:hover {
+        background-color: var(--text);
+        color: var(--primary);
+        border-radius: 4px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
