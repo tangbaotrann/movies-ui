@@ -1,0 +1,16 @@
+.wrapper-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.search-header {
+    position: fixed;
+    z-index: 9999;
+}
+
+.menu-header {
+    position: fixed;
+    z-index: 9999;
+}

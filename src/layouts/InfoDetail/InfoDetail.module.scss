@@ -1,0 +1,73 @@
+.image-info-detail {
+    width: 100%;
+    height: 100vh;
+    border-radius: 4px;
+    margin-top: 16px;
+    object-fit: cover;
+}
+
+.inner-info-detail {
+    margin-top: 16px;
+}
+
+.title-name {
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
+.release-date {
+    font-size: 1.4rem;
+    margin-top: 22px;
+}
+
+.genres, .overviews, .language {
+    display: flex;
+    align-items: center;
+    margin-top: 22px;
+    line-height: 16px;
+    font-size: 1.4rem;
+}
+
+.gen-display, .language-display {
+    border: 0.1px solid var(--text-hover);
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin: 0 12px;
+}
+
+.overview {
+    margin-right: 12px;
+}
+
+.quantity {
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.vote-average, .popularity {
+    margin: 18px 0;
+}
+
+.btn-now {
+    background-color: var(--text-hover);
+    color: var(--text);
+
+    &:hover {
+        background-color: var(--text);
+        color: var(--text-hover);
+        opacity: 0.8;
+        transition: 0.4s linear;
+    }
+}
+
+.btn-trailer {
+    margin-left: 12px;
+
+    &:hover {
+        background-color: var(--text-hover);
+        color: var(--text);
+        opacity: 0.8;
+        transition: 0.4s linear;
+    }
+}
+

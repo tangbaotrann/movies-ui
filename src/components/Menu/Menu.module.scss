@@ -7,14 +7,16 @@
 
 .menu-wrapper ul li {
     font-size: 1.6rem;
+    font-weight: 600;
     padding: 4px;
     margin: 0 20px;
 
     &:hover {
-        background-color: var(--text);
-        color: var(--primary);
+        background-color: var(--text-hover);
+        color: var(--text);
         border-radius: 4px;
         opacity: 0.8;
+        transition: 0.4s linear;
         cursor: pointer;
     }
 }

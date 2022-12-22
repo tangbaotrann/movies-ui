@@ -51,6 +51,13 @@ function Content() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // movie weeks
+  useEffect(() => {
+    dispatch(fetchApiMovieWeeks());
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // trending movie see more (page 1-2-3)
   const handleClickedBtnSeeMoreTrending = () => {
     if (trendingMovies.length <= 20) {
@@ -72,13 +79,6 @@ function Content() {
       dispatch(fetchApiMovies());
     }
   };
-
-  // movie weeks
-  useEffect(() => {
-    dispatch(fetchApiMovieWeeks());
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="grid wide">
@@ -104,12 +104,14 @@ function Content() {
           {isLoadingMore ? (
             <CircularProgress />
           ) : (
-            <Button
-              className={cx("btn-see-more-trending")}
-              onClick={handleClickedBtnSeeMoreTrending}
-            >
-              {trendingMovies.length >= 60 ? "Collapse" : "See more"}
-            </Button>
+            <div className="col l-o-5">
+              <Button
+                className={cx("btn-see-more-trending")}
+                onClick={handleClickedBtnSeeMoreTrending}
+              >
+                {trendingMovies.length >= 60 ? "Collapse" : "See more"}
+              </Button>
+            </div>
           )}
 
           {/* All movie */}
@@ -132,12 +134,14 @@ function Content() {
           {isLoadingMore ? (
             <CircularProgress />
           ) : (
-            <Button
-              className={cx("btn-see-more-all")}
-              onClick={handleClickedBtnSeeMoreAll}
-            >
-              {movies.length >= 60 ? "Collapse" : "See more"}
-            </Button>
+            <div className="col l-o-5">
+              <Button
+                className={cx("btn-see-more-all")}
+                onClick={handleClickedBtnSeeMoreAll}
+              >
+                {movies.length >= 60 ? "Collapse" : "See more"}
+              </Button>
+            </div>
           )}
         </div>
 

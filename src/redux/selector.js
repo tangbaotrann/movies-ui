@@ -4,6 +4,8 @@ import { createSelector } from "@reduxjs/toolkit";
 export const moviesSelector = (state) => state.movies.data;
 export const moviesTrendingSelector = (state) => state.movies.dataTrending;
 export const moviesWeeksSelector = (state) => state.movies.dataMovieWeeks;
+export const findByIdMovieSelector = (state) => state.movies.findByIdMovie;
+
 export const isLoadingSeeMore = (state) => state.movies.isLoading;
 export const isLoadingAllMovie = (state) => state.movies.isLoadingMovies;
 export const isLoadingTrendingMovie = (state) =>

@@ -97,6 +97,22 @@ export const fetchApiTrendingMovies = createAsyncThunk(
   }
 );
 
+// find by id movie
+export const fetchApiMovieFindById = createAsyncThunk(
+  "movieSlice/fetchApiMovieFindById",
+  async (movieId) => {
+    try {
+      const res = await axios.get(
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=a889e31d75e30f7dae101240282d12d5&language=en-US`
+      );
+
+      return res.data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
 // movie week
 export const fetchApiMovieWeeks = createAsyncThunk(
   "movieSlice/fetchApiMovieWeeks",
@@ -120,6 +136,7 @@ const movieSlice = createSlice({
     data: [],
     dataTrending: [],
     dataMovieWeeks: [],
+    findByIdMovie: null,
     isLoading: false,
     isLoadingMovies: false,
     isLoadingTrendingMovies: false,
@@ -189,6 +206,10 @@ const movieSlice = createSlice({
 
         state.data = updated;
         state.isLoading = false;
+      })
+      // find id movie
+      .addCase(fetchApiMovieFindById.fulfilled, (state, action) => {
+        state.findByIdMovie = action.payload;
       })
       // movie week
       .addCase(fetchApiMovieWeeks.fulfilled, (state, action) => {
