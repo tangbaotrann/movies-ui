@@ -12,7 +12,10 @@ function BackHomeIcon({ to }) {
         <div className="col l-8">
           <div className={cx("inner-back")}>
             <Link to={to}>
-              <span className={cx("icon-back")}>BACK</span>
+              <div className={cx("back")}>
+                <h1 className={cx("icon-back")}>&lt;</h1>
+                <span className={cx("text-back")}>BACK</span>
+              </div>
             </Link>
           </div>
         </div>

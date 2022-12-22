@@ -13,16 +13,12 @@ function Header() {
         <div className={cx("wrapper-header")}>
           {/* Search */}
           <div className="col l-6">
-            <div className={cx("search-header")}>
-              <Search />
-            </div>
+            <Search />
           </div>
 
           {/* Menu */}
           <div className="col l-6">
-            <div className={cx("menu-header")}>
-              <Menu />
-            </div>
+            <Menu />
           </div>
         </div>
       </div>

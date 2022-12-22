@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 function MovieFilm({ movie }) {
   const dispatch = useDispatch();
-
+  console.log(movie);
   // handle find by id movie
   const handleFindByIdMovie = () => {
     dispatch(fetchApiMovieFindById(movie.id));
@@ -19,10 +19,13 @@ function MovieFilm({ movie }) {
 
   return (
     <>
-      <Image
-        className={cx("image-movie-film")}
-        src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-      />
+      <Link to={`/details/${movie.id}`}>
+        <Image
+          className={cx("image-movie-film")}
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          onClick={handleFindByIdMovie}
+        />
+      </Link>
       <Button className={cx("btn-name-film")} onClick={handleFindByIdMovie}>
         <Link to={`/details/${movie.id}`}>{movie.title || movie.name}</Link>
       </Button>

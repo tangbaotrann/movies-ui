@@ -19,10 +19,13 @@ function MovieWeek({ movie }) {
 
   return (
     <>
-      <Image
-        className={cx("image-movie-week")}
-        src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-      />
+      <Link to={`/details/${movie.id}`}>
+        <Image
+          className={cx("image-movie-week")}
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          onClick={handleFindByIdMovie}
+        />
+      </Link>
 
       <div className={cx("inner-movie-week")}>
         <Button className={cx("btn-name-week")} onClick={handleFindByIdMovie}>

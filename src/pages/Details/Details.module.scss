@@ -1,0 +1,6 @@
+.scroll-top {
+    &:hover {
+        background-color: var(--text-hover);
+        transition: 0.4s linear;
+    }
+}

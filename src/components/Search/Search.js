@@ -2,8 +2,10 @@ import classNames from "classnames/bind";
 import { useState, useEffect } from "react";
 import TippyHeadless from "@tippyjs/react/headless";
 import { useDispatch, useSelector } from "react-redux";
-import filterSlice from "../../redux/features/filterSlice";
-import { filterSearchFilm } from "../../redux/selector";
+import filterSlice, {
+  fetchApiSearchMovieByKeyword,
+} from "../../redux/features/filterSlice";
+import { filterSearchMovieByKeyWordSelector } from "../../redux/selector";
 
 import Button from "../Button";
 import Input from "../Input";
@@ -22,11 +24,23 @@ function Search() {
 
   const dispatch = useDispatch();
 
-  const resultSearch = useSelector(filterSearchFilm);
+  const resultSearchMovieByKeyword = useSelector(
+    filterSearchMovieByKeyWordSelector
+  );
 
   // result search
   useEffect(() => {
     dispatch(filterSlice.actions.arrivalResultSearchValue(value));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedValue, value]);
+
+  useEffect(() => {
+    if (value.length > 0) {
+      dispatch(fetchApiSearchMovieByKeyword(value));
+    } else {
+      return;
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedValue, value]);
@@ -53,10 +67,10 @@ function Search() {
           <div tabIndex="-1" {...attrs} className={cx("popper-search")}>
             <Popper>
               <>
-                {resultSearch?.length > 0 ? (
-                  resultSearch?.map((result) => {
+                {resultSearchMovieByKeyword?.length > 0 ? (
+                  resultSearchMovieByKeyword.map((result) => {
                     return (
-                      <div key={result.id}>
+                      <div key={result?.id}>
                         <SearchItem result={result} />
                       </div>
                     );

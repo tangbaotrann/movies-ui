@@ -13,6 +13,8 @@ export const isLoadingTrendingMovie = (state) =>
 
 // search
 export const filterSearchSelector = (state) => state.filterSearch.searchValue;
+export const filterSearchMovieByKeyWordSelector = (state) =>
+  state.filterSearch.dataSearch;
 
 // filter film
 export const filterSearchFilm = createSelector(

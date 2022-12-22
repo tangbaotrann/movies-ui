@@ -16,16 +16,30 @@
 .wrapper-search-item {
     display: flex;
     width: 100%;
-    align-items: center;
 }
 
 .desc-search-item {
+    display: flex;
+    flex-direction: column;
     margin-left: 10px;
 }
 
 .title-search-item {
+    color: black;
+    text-align: left;
     font-size: 1.4rem;
     margin-bottom: 4px;
+    margin-left: -6px;
+
+    &:hover {
+        color: var(--text-hover);
+        opacity: 0.8;
+        transition: 0.4s linear;
+    }
+}
+
+.btn-title-search {
+    background-color: transparent;
 }
 
 .overview-search-item {
@@ -33,11 +47,22 @@
 }
 
 .image-movie-film {
-    width: 62px;
-    height: 62px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
+    margin-bottom: 16px;
+
+    &:hover {
+        box-shadow: 0 0 40px 0 var(--text-hover);
+        opacity: 0.8;
+        transition: 0.4s linear;
+    }
 }
 
 .popper-search {
-    width: 60%;
+    width: 400px;
+    height: 666px;
+    border-radius: 4px;
+    overflow-y: scroll;
+    overflow-y: overlay;
 }

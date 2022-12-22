@@ -15,7 +15,7 @@ function SlideShow() {
   const isLoadingMovies = useSelector(isLoadingAllMovie);
 
   return (
-    <div className="grid wide">
+    <div className="grid">
       {isLoadingMovies ? (
         <CircularProgress />
       ) : (

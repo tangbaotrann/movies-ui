@@ -1,8 +1,15 @@
 .inner-back {
-    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
 }
 
-.icon-back {
+.back {
+    display: flex;
+    align-items: center;
+}
+
+.text-back {
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--text);
@@ -13,4 +20,10 @@
         transition: 0.4s linear;
         cursor: pointer;
     }
+}
+
+.icon-back {
+    margin-right: 6px;
+    font-size: 2rem;
+    font-weight: 700;
 }
