@@ -15,6 +15,7 @@ function MovieWeek({ movie }) {
   // handle find by id movie
   const handleFindByIdMovie = () => {
     dispatch(fetchApiMovieFindById(movie.id));
+    window.scrollTo(0, 0);
   };
 
   return (

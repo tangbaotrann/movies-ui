@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import styles from "./InfoDetail.module.scss";
 import Image from "../../components/Image";
 import Button from "../../components/Button";
+import Content from "../Content";
 
 const cx = classNames.bind(styles);
 
@@ -69,6 +70,15 @@ function InfoDetail({ movie }) {
             {/* button */}
             <Button className={cx("btn-now")}>Watch now</Button>
             <Button className={cx("btn-trailer")}>Watch trailer</Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className={cx("container-similar-film")}>
+        <div className="row">
+          <div className="col l-12">
+            <Content pageDetail />
           </div>
         </div>
       </div>

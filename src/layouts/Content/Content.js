@@ -27,7 +27,7 @@ import Button from "../../components/Button";
 
 const cx = classNames.bind(styles);
 
-function Content() {
+function Content({ pageDetail }) {
   const dispatch = useDispatch();
 
   const movies = useSelector(moviesSelector);
@@ -85,7 +85,11 @@ function Content() {
       <div className="row">
         <div className="col l-8">
           {/* Trending movie */}
-          <h1 className={cx("title-name")}>Trending Movie</h1>
+          {pageDetail ? (
+            <h1 className={cx("title-name")}>Similar Movie</h1>
+          ) : (
+            <h1 className={cx("title-name")}>Trending Movie</h1>
+          )}
           <div className="row">
             {isLoadingTrending ? (
               <CircularProgress />
