@@ -4,7 +4,15 @@ import styles from "./Input.module.scss";
 
 const cx = classNames.bind(styles);
 
-function Input({ className, type, onChange, onFocus, value, placeholder }) {
+function Input({
+  className,
+  type,
+  onChange,
+  onFocus,
+  ref,
+  value,
+  placeholder,
+}) {
   return (
     <input
       className={cx("inner-input", { [className]: className })}
@@ -12,6 +20,7 @@ function Input({ className, type, onChange, onFocus, value, placeholder }) {
       value={value}
       onChange={onChange}
       onFocus={onFocus}
+      ref={ref}
       placeholder={placeholder}
     />
   );

@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 function MovieFilm({ movie }) {
   const dispatch = useDispatch();
-  console.log(movie);
+
   // handle find by id movie
   const handleFindByIdMovie = () => {
     dispatch(fetchApiMovieFindById(movie.id));

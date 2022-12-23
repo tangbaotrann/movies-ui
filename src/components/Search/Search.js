@@ -1,12 +1,18 @@
 import classNames from "classnames/bind";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import TippyHeadless from "@tippyjs/react/headless";
 import { useDispatch, useSelector } from "react-redux";
+import TippyHeadless from "@tippyjs/react/headless";
+
 import filterSlice, {
   fetchApiSearchMovieByKeyword,
 } from "../../redux/features/filterSlice";
-import { filterSearchMovieByKeyWordSelector } from "../../redux/selector";
-
+import {
+  filterSearchMovieByKeyWordSelector,
+  isLoadingSearch,
+} from "../../redux/selector";
 import Button from "../Button";
 import Input from "../Input";
 import styles from "./Search.module.scss";
@@ -24,6 +30,7 @@ function Search() {
 
   const dispatch = useDispatch();
 
+  const isLoading = useSelector(isLoadingSearch);
   const resultSearchMovieByKeyword = useSelector(
     filterSearchMovieByKeyWordSelector
   );
@@ -58,6 +65,12 @@ function Search() {
   // handle btn search
   const handleSearchBtn = () => {
     setShowResultSearch(true);
+  };
+
+  // handle clear inp
+  const handleClearInput = () => {
+    setValue("");
+    setShowResultSearch(false);
   };
 
   return (
@@ -99,6 +112,23 @@ function Search() {
               onFocus={() => setShowResultSearch(true)}
               placeholder="Enter name film ..."
             />
+
+            {/* icon clear input */}
+            {value && !isLoading && (
+              <FontAwesomeIcon
+                className={cx("icon-clear")}
+                icon={faCircleXmark}
+                onClick={handleClearInput}
+              />
+            )}
+
+            {/* icon loading */}
+            {isLoading && (
+              <FontAwesomeIcon
+                className={cx("icon-loading")}
+                icon={faSpinner}
+              />
+            )}
           </div>
           <Button onClick={handleSearchBtn}>Search</Button>
         </div>

@@ -30,9 +30,14 @@ const filterSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchApiSearchMovieByKeyword.fulfilled, (state, action) => {
-      state.dataSearch = action.payload;
-    });
+    builder
+      .addCase(fetchApiSearchMovieByKeyword.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchApiSearchMovieByKeyword.fulfilled, (state, action) => {
+        state.dataSearch = action.payload;
+        state.isLoading = false;
+      });
   },
 });
 
