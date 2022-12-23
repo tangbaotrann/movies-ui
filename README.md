@@ -6,10 +6,3 @@
 - Bước 4: Gõ lệnh 'npm start' để chạy app.
 - Bước 5: Mở browser (có thể là Chrome, MS Edge, ...) -> Dán link vào: 'http://localhost:3000/'.
 
-# Load films:
-
-- Load tất cả films của trang 1.
-
-# Search:
-
-- Tìm kiếm theo title của films.
